@@ -16,7 +16,7 @@ app.get("/login",(req,resp)=>{
 app.post("/profile",verifytoken,(req,resp)=>{
     jwt.verify(req.token,secretkey,(err,uthData)=>{
         if(err){
-            resp.send({result:"Invalid TOken"})
+            resp.send({result:"Invalid Token"})
         }else{
             resp.json({
                 message:"Profile Accessed",
